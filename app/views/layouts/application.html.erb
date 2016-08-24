@@ -5,13 +5,49 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <style>
+      #navcontainer ul { 
+            list-style-type: none; 
+            margin: 0;
+            padding: 0;
+            float:right;
+      }
+      #navcontainer ul li { 
+          display: inline; 
+      }
+      
+      #navcontainer ul li a { 
+          text-decoration: none; 
+      }
+      
+      #navcontainer ul li a:hover {
+        color: #fff;
+        background-color: #369;
+      }
+      
+      #rcorners {
+    height: 200px;
+    width: 400px;
+    background: grey;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    }
+
+  </style>
+  
 </head>
 <body>
-    <div class="container">
+    <div id="navcontainer" class="container">
         <ul class="nav nav-tabs">
-            <li><%= link_to "Blocitoff", root_path %></li>
+<!--           <li><%= link_to "Blocitoff", root_path %></li>
             
-            <div class="pull-right-user-info">
+            <div class="pull-right-user-info"> -->
+                <div>
                 <% if user_signed_in? %>
                 <div class="pull-right">
                     <ul class="nav nav-tabs", style="border-bottom:0px;">
@@ -23,7 +59,7 @@
                 <% else %>
                     <div class="pull-right">
                         <ul class="nav nav-tabs", style="border-bottom:0px;">
-                            <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
+                            <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> | </li>
                             <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
                         </ul>
                     </div>
