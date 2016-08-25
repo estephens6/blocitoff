@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+      #navcontainer ul { 
+            list-style-type: none; 
+            margin: 0;
+            padding: 0;
+            float:right;
+      }
+      #navcontainer ul li { 
+          display: inline; 
+      }
+      
+      #navcontainer ul li a { 
+          text-decoration: none; 
+      }
+      
+      #navcontainer ul li a:hover {
+        color: #fff;
+        background-color: #369;
+      }
+      
+      #rcorners {
+    height: 200px;
+    width: 400px;
+    background: #D3D3D3;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    }
