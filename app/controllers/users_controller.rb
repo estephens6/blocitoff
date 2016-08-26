@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-    
-    def show
-        @users = User.find(params[:id])
-    end
-    
+  def show
+    @user = User.find(params[:id] || current_user.id)
+    @items = @user.items
+  end
 end
