@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id] || current_user.id)
+    @user = current_user
+    @user_name = @user.email
     @items = @user.items
+    # @total_items = Item.count
+  end
+
+  def root_redirect
+    redirect_to user_path(current_user)
   end
 end
