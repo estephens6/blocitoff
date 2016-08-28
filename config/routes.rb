@@ -14,11 +14,16 @@
 
   get 'welcome/index'
   
-  get 'users/show'
+  get 'users/show/:id'
   
   resources :items, only: [:create, :destroy]
 
   devise_for :users
+  
+  
+      resources :users do
+        resources :users, except: [:index]
+    end
 
 end
   
