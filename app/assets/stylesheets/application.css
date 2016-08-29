@@ -44,7 +44,7 @@ a {
       }
       
       #rcorners {
-    height: 60px;
+    height: 300px;
     width: 100px;
 /*    background: #D3D3D3; */
     color: white;
@@ -69,3 +69,38 @@ a {
     margin-top: -100px;
     margin-left: -100px; */
     }
+
+header h1{
+    border: 0; margin: 0;
+    background-color: black;
+}
+*{
+    border: 0; margin: 0;
+}
+
+
+#htitle { 
+  text-indent: 2em;
+}
+
+
+
+
+
+
+
+      #wel-rcorners {
+    height: 60px;
+    width: 100px;
+/*    background: #D3D3D3; */
+    color: white;
+
+
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+  border-radius:30px;
+/*  border: #solid 10px #000;*/
+  background-color: rgba(105,100,100,0.8);
+  width:50%;
+
+}
