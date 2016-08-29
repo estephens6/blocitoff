@@ -1,32 +1,25 @@
-# Rails.application.routes.draw do
-#  devise_for :users
-#  get 'welcome/index'
+Rails.application.routes.draw do
 
-#  get 'welcome/about'
-  
-#  root 'welcome#index'
-  
-#  resources :users, only: [:show]
-  
-  Rails.application.routes.draw do
-  
-  root 'welcome#index'
+  get 'users/show'
+
+  get 'items/new'
+
+  get 'items/create'
+
+  devise_for :users
 
   get 'welcome/index'
   
-  get 'users/show/:id'
-  
-  resources :items, only: [:create, :destroy]
+  get 'welcome/about'
 
-  devise_for :users
-  
-  
-      resources :users do
-        resources :users, except: [:index]
+
+  root to: "users#show"
+    resources :users, only: [:show] do #this means that within users, it can only show user profile. Within user profile a list of items will be displayed (for peer pressure)
+      resources :items, only: [:create, :destroy]
     end
-
+    
+    
 end
-  
   
   
   

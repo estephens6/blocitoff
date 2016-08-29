@@ -1,18 +1,34 @@
+Blocitoff== README
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+##Blocitoff: A self-destructing to-do list to keep you focused on the things that really matter.
+
+Made with my mentor at [Bloc](http://bloc.io).
+
+To load rails server: :
+# rails s -p $PORT -b $IP
+
+To remove files that you don't need:
+git clean -f -d
+
+To reset database:
+
+rake db:reset drops the database and uses the seed file to repopulate it.
+
+then migrate database
+
+rake db:migrate
+
+#skips a pending commit and forces the current commit:
+git push --force
+
+HEROKU database commands:
+You can use heroku pg:reset DATABASE command to reset the entire database. The command will simply drop and create the database.
+
+You have to use heroku rake db:migrate to create the tables then.
+
+Alternatively you can use rake db:reset command locally and then run heroku db:push to update the production db.
+
+git branch -a / shows all local and remote branches
+git granch -r / shows only remote branches.
 
 
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team
