@@ -1,25 +1,46 @@
-<h2>Change your password</h2>
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <head>
+    <style></style>
+    <h1 id="htitle"><a href="https://blocitoff-ericstephens.c9users.io" style= "text-decoration: none;">Blocitoff</a></h1>
+    </head>
+</header>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+<body background="https://lh3.googleusercontent.com/E7OZ7t_GxMwZig2lqK6nyA_X_3CK645bDvg_Ak03e6HGoXcmo4n0rwOQz30tBzuE62cGLSJke2YqSWWFD8dLD7d6W0GR1YUU0ewwjDqdSQ0HFpHbidPU-0EqFVrOJEByskWIBNZbCx5ip0K9C9dAdMEXL6qOJ0yOQsP2CU3CqeBbYZgzw8ud3x7DbH_yxBQSFmF8TR05XIqduwxhxAhnEeu0TQvlToaKKDIZhDgNppf5kGuQy7qgb-ZbD453hMyyuBf5zLGs7q1VoBr-di2ttT4pQs8YpU41agul9NTVyVL6VBvus3zryfL-1zRtSlW8IY-lOzjhKTTmElQEIc8fGAbPQUcnagF8IdPkDcq_m5cVmwsAnXxm_u62JLsEuUDxCKloToeGTTCsKX4HF1ej7CFYm-035Cs3pTgCSKbkTpvFCeI64A46bPSUT9WhsWh2em73iMowSYGbDzbiiTb0vOmhrGEmZWVVebhRV6xic-5GxFSqI294AD_dxhhocu-WQgE33rhjJFPHltaf2xRalsCUVVfG1CqhDpzkRJ8W4vytVWHYHHtxYM6xYo-KUKPXBBATHTuZ3U9PXZVXrzu_rpm4XjFbg3DFtCIIVM8_UBpVsdH1=w1440-h883-no">
+    <center>
+        <div id="rcorners">
+            
+          <h2>Change your password</h2>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+            <%= f.hidden_field :reset_password_token %>
+          
+            <div class="field">
+              <%= f.label :password, "New password" %><br />
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+            </div>
+          
+            <div class="field">
+              <%= f.label :password_confirmation, "Confirm new password" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+          
+            <div class="actions">
+              <%= f.submit "Change my password" %>
+            </div>
+          <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+          <%= render "devise/shared/links" %>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+            </br>
+            <p>[ Find me in app/views/devise/passwords/edit.html.erb ]</p>
+        </div>
+    </center>
+</body>
 
-<%= render "devise/shared/links" %>
+</html>
