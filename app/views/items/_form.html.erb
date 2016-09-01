@@ -1,0 +1,10 @@
+<%= form_for [user, user.items.new ] do |f| %>
+<div class="row">
+  <div class='form-group'>
+    <%= f.label :Item %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Add it, do it!' %>
+</div>
+  <div class='form-group'>
+    <%= f.submit 'Save', class: 'btn btn-success green', remote: true %>
+  </div>
+<% end %>
