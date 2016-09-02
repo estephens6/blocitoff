@@ -29,9 +29,9 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name)
   end
-#  respond_to do |format|
-#   format.html
-#   format.js
-#  end
+  respond_to do |format|
+   format.html
+   format.js
+  end
 end
 
