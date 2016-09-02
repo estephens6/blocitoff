@@ -21,8 +21,18 @@ class ItemsController < ApplicationController
   def update
   end
   
-  def destroy
+def destroy
+  @user = User.find(params[:user_id])
+  @item = Item.find(params[:id])
+  @item.destroy
+  if @item.destroy
+    flash[:notice] = "Item was checked! Good job!"
+    redirect_to @user
+  else
+    flash.now[:alert] = "Alert!!! Unable to delete item!"
+    redirect_to @user
   end
+end
   
   
   private
