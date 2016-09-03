@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav-tabs {
+  border-bottom: 0px solid #ddd;
+}
+
 
 a {
     color: white;
