@@ -26,7 +26,7 @@ def destroy
   @item = Item.find(params[:id])
   @item.destroy
   if @item.destroy
-    flash[:notice] = "Item was checked! Good job!"
+    flash[:notice] = "Item was completed! Good job!"
     redirect_to @user
   else
     flash.now[:alert] = "Alert!!! Unable to delete item!"

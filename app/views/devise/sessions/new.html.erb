@@ -11,35 +11,34 @@
     <center>
         <div id="rcorners">
           <div id="signup">
-          <h2>Log in</h2>
-
+          <h2 id="fields">Log in</h2>
+          
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
-              <%= f.label :email %><br />
+              <em id="fields"><%= f.label :email %></em><br />
               <%= f.email_field :email, autofocus: true %>
             </div>
           
             <div class="field">
-              <%= f.label :password %><br />
+              <em id="fields"><%= f.label :password %></em><br />
               <%= f.password_field :password, autocomplete: "off" %>
             </div>
           
             <% if devise_mapping.rememberable? -%>
               <div class="field">
                 <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
+                <em id="fields"><%= f.label :remember_me %></em>
               </div>
             <% end -%>
           
             <div class="actions">
-              <%= f.submit "Log in" %>
+              <em id="fields"><%= f.submit "Log in" %></em>
             </div>
+            </br>
           <% end %>
           
           <%= render "devise/shared/links" %>
           </div>
-            </br>
-          <p>[ Find me in app/views/devise/sessions/new.html.erb ]</p>
         </div>
     </center>
 </body>
